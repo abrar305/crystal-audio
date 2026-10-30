@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crystal English – Audio</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b3a8c;--ink:#33507f;--bg:#f4f9ff}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Nunito',system-ui,sans-serif;color:#0f2a5c;background:var(--bg)}
+h1,h2,h3,h4,.brand{font-family:'Fredoka','Nunito',sans-serif}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #dbe8fb;position:sticky;top:0;z-index:5}
+header .wrap{display:flex;align-items:center;gap:14px;padding-top:8px;padding-bottom:8px}
+header img{height:52px;display:block}
+.brand{font-size:24px;font-weight:600;color:var(--navy)} .brand span{font-weight:500;color:#4b7bd1}
+.hero{background:linear-gradient(180deg,#8cc4ff 0,#e6f3ff 100%);overflow:hidden}
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding-top:48px;padding-bottom:56px}
+.hero .txt{flex:1 1 380px;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.pill{background:#fff;color:var(--navy);border-radius:999px;padding:7px 16px;font-weight:800;font-size:14px;letter-spacing:.06em}
+.hero h1{margin:0;font-size:clamp(36px,6vw,62px);line-height:1.05;color:var(--navy)}
+.hero p{margin:0;font-size:20px;line-height:1.5;color:#17407f;max-width:480px}
+.cta{background:var(--navy);color:#fff;border-radius:999px;padding:14px 30px;font-weight:800;font-size:18px}
+.fan{flex:1 1 360px;position:relative;height:340px;max-width:460px;margin:0 auto}
+.fan img{position:absolute;width:190px;border-radius:12px;box-shadow:0 14px 34px rgba(11,58,140,.3)}
+.fan img:nth-child(1){left:0;top:44px;transform:rotate(-8deg)}
+.fan img:nth-child(2){left:135px;top:0;width:200px;z-index:2;box-shadow:0 18px 40px rgba(11,58,140,.35)}
+.fan img:nth-child(3){left:265px;top:44px;transform:rotate(8deg)}
+.section{padding:56px 0}
+.section h2{margin:0 0 28px;text-align:center;font-size:clamp(30px,4vw,42px);color:var(--navy)}
+.cards{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
+.card{width:min(320px,100%);background:#fff;border-radius:26px;padding:18px;box-shadow:0 10px 30px rgba(11,58,140,.12);display:flex;flex-direction:column;gap:12px}
+.card img{width:100%;border-radius:14px;display:block}
+.card h3{margin:0;font-size:28px;color:var(--navy)} .card p{margin:0;color:var(--ink);font-size:17px}
+.card .go{display:block;text-align:center;padding:13px;border-radius:999px;font-weight:800;font-size:18px}
+.steps{background:#fff}
+.steps .wrap{display:flex;flex-wrap:wrap;gap:32px;justify-content:center}
+.step{flex:1 1 240px;max-width:320px;text-align:center}
+.step b{width:60px;height:60px;border-radius:50%;background:var(--navy);color:#fff;font:600 28px 'Fredoka',sans-serif;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.step h4{margin:0 0 6px;font-size:24px;color:var(--navy)} .step p{margin:0;color:var(--ink);font-size:17px;line-height:1.5}
+footer{background:var(--navy);color:#fff;padding:26px 0;font-weight:700}
+footer .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+footer .lg{background:#fff;border-radius:12px;padding:5px 9px;display:flex} footer img{height:38px}
+/* level view */
+.lvhead{background:linear-gradient(180deg,#8cc4ff 0,#e6f3ff 100%);padding:20px 0 28px}
+.back{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--navy);border-radius:999px;padding:10px 18px 10px 12px;font-weight:800;border:0;margin-bottom:18px}
+.lvtitle{display:flex;align-items:center;gap:18px}
+.lvtitle img{width:84px;border-radius:10px;box-shadow:0 6px 16px rgba(11,58,140,.3)}
+.lvtitle h1{margin:0;font-size:clamp(34px,6vw,48px);color:var(--navy);line-height:1}
+.lvtitle p{margin:6px 0 0;font-size:18px;color:#17407f}
+.list{max-width:760px;margin:0 auto;padding:22px 16px 60px;display:flex;flex-direction:column;gap:12px}
+.row{background:#fff;border-radius:20px;padding:12px 14px;display:flex;align-items:center;gap:14px;box-shadow:0 4px 14px rgba(11,58,140,.1);border:3px solid transparent;scroll-margin-top:90px}
+.row.hl{border-color:var(--lv)}
+.badge{width:52px;height:52px;border-radius:50%;background:var(--lv);color:var(--lvt);font:600 22px 'Fredoka',sans-serif;display:flex;align-items:center;justify-content:center;flex:none}
+.info{flex:1;min-width:0}
+.info b{display:block;font-size:18px;color:var(--navy)} .info small{color:#4a6590;font-size:14px}
+.bar{display:none;align-items:center;gap:10px;margin-top:8px}
+.row.on .bar{display:flex}
+.bar input{flex:1;accent-color:var(--lv);min-width:0}
+.bar span{font-size:13px;color:#4a6590;min-width:84px;text-align:right}
+.play{width:48px;height:48px;border-radius:50%;border:0;background:var(--navy);display:flex;align-items:center;justify-content:center;flex:none}
+.play:focus-visible,.back:focus-visible,.cta:focus-visible,.go:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+@media(max-width:520px){
+.fan{height:250px;max-width:340px}
+.fan img{width:125px}
+.fan img:nth-child(1){left:6px;top:36px}
+.fan img:nth-child(2){left:98px;top:0;width:140px}
+.fan img:nth-child(3){left:205px;top:36px}
+.brand{font-size:20px} header img{height:44px}
+.hero .wrap{padding-top:32px;padding-bottom:36px}
+.cta{width:100%;text-align:center}
+}
+.tabs{display:flex;gap:10px;margin-top:20px}
+.tab{flex:1;max-width:240px;border:0;border-radius:999px;padding:12px 16px;background:#fff;color:var(--navy);font:600 19px 'Fredoka','Nunito',sans-serif;box-shadow:0 3px 10px rgba(11,58,140,.12)}
+.tab[aria-selected="true"]{background:var(--navy);color:#fff}
+.tab:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+.soon{background:#fff;border-radius:20px;padding:30px 20px;text-align:center;color:var(--ink);font-size:19px;font-weight:700;box-shadow:0 4px 14px rgba(11,58,140,.1)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="#" style="display:flex;align-items:center;gap:14px"><img src="assets/logo.png" alt="Crystal"><span class="brand">Crystal English <span>Audio</span></span></a></div></header>
+
+<main id="home">
+  <section class="hero"><div class="wrap">
+    <div class="txt">
+      <span class="pill">SCAN · LISTEN · REPEAT</span>
+      <h1>Hear every sound in your book</h1>
+      <p>Scan the QR code on your Crystal English book, pick your level and press play.</p>
+      <a class="cta" href="#levels">Choose your level</a>
+    </div>
+    <div class="fan" id="fan"></div>
+  </div></section>
+  <section class="section" id="levels"><div class="wrap"><h2>Choose your level</h2><div class="cards" id="cards"></div></div></section>
+  <section class="section steps"><div class="wrap">
+    <div class="step"><b>1</b><h4>Scan</h4><p>Point your phone camera at the QR code in your book.</p></div>
+    <div class="step"><b>2</b><h4>Choose</h4><p>Pick your level and the page you are on.</p></div>
+    <div class="step"><b>3</b><h4>Listen</h4><p>Press play, listen carefully and repeat after the teacher.</p></div>
+  </div></section>
+  <footer><div class="wrap"><span class="lg"><img src="assets/logo.png" alt="Crystal"></span><span>Crystal English · Audio for Levels A, B and C</span></div></footer>
+</main>
+
+<main id="level" hidden>
+  <div class="lvhead"><div class="wrap">
+    <a class="back" href="#"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="#0b3a8c" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>All levels</a>
+    <div class="lvtitle"><img id="lvcover" alt=""><div><h1 id="lvname"></h1><p id="lvhint"></p></div></div>
+    <div class="tabs" id="tabs" role="tablist"></div>
+  </div></div>
+  <div class="list" id="list"></div>
+</main>
+
+<script src="data.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const keys = Object.keys(LEVELS);
+const PLAY = "M8 5v14l11-7z", PAUSE = "M8 5h3v14H8zM13 5h3v14h-3z";
+const au = new Audio(); au.preload = "none";
+let cur = null; // {id, row}
+
+// home
+$("fan").innerHTML = ["A","B","C"].filter(k=>LEVELS[k]).map(k=>`<img src="${LEVELS[k].cover}" alt="${LEVELS[k].name} cover">`).join("");
+$("cards").innerHTML = keys.map(k=>{const L=LEVELS[k];return `<div class="card"><img src="${L.cover}" alt="${L.name} book cover"><h3>${L.name}</h3><p>Tap to open the audio for this book.</p><a class="go" href="#${k}" style="background:${L.color};color:${L.text}">Open ${L.name} audio</a></div>`}).join("");
+
+const fmt = s => isFinite(s) ? Math.floor(s/60)+":"+String(Math.floor(s%60)).padStart(2,"0") : "0:00";
+const icon = p => `<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="${p}" fill="#fff"/></svg>`;
+
+function stop(){ au.pause(); if(cur){ cur.row.classList.remove("on"); cur.btn.innerHTML = icon(PLAY); cur.btn.setAttribute("aria-label","Play"); cur=null; } }
+
+const LB = Object.assign({ sounds: "🎧 Sounds", songs: "🎵 Songs", songsHint: "Sing along!", soon: "Songs are coming soon 🎵" }, typeof LABELS !== "undefined" ? LABELS : {});
+
+function showLevel(key, tab, trackId){
+  const L = LEVELS[key]; stop();
+  $("home").hidden = true; $("level").hidden = false;
+  $("level").style.setProperty("--lv", L.color); $("level").style.setProperty("--lvt", L.text);
+  $("lvcover").src = L.cover; $("lvcover").alt = L.name + " cover";
+  $("lvname").textContent = L.name;
+  $("lvhint").textContent = tab === "songs" ? LB.songsHint : (L.hint || "");
+  document.title = L.name + " – Crystal English Audio";
+  $("tabs").innerHTML = ["sounds","songs"].map(t => `<button class="tab" role="tab" aria-selected="${t===tab}" data-t="${t}">${LB[t]}</button>`).join("");
+  $("tabs").onclick = e => { const b = e.target.closest(".tab"); if(b && b.dataset.t !== tab) location.hash = "#" + key + (b.dataset.t === "songs" ? "/songs" : ""); };
+  const items = tab === "songs" ? (L.songs || []) : L.tracks;
+  const list = $("list"); list.innerHTML = "";
+  if(!items.length){ list.innerHTML = `<div class="soon">${LB.soon}</div>`; window.scrollTo(0,0); return; }
+  items.forEach(t=>{
+    const row = document.createElement("div"); row.className = "row"; row.id = t.id;
+    row.innerHTML = `<div class="badge">${t.badge}</div><div class="info"><b>${t.title}</b><small>${t.sub}</small>
+      <div class="bar"><input type="range" min="0" max="1000" value="0" aria-label="Seek"><span>0:00 / 0:00</span></div></div>
+      <button class="play" aria-label="Play">${icon(PLAY)}</button>`;
+    const btn = row.querySelector(".play"), rng = row.querySelector("input"), tm = row.querySelector("span");
+    btn.onclick = () => {
+      if(cur && cur.id === t.id){ if(au.paused){ au.play(); } else { au.pause(); } return; }
+      stop(); au.src = t.file; cur = {id:t.id,row,btn,rng,tm};
+      row.classList.add("on"); au.play().catch(()=>{ tm.textContent = "Audio file not found"; });
+    };
+    rng.oninput = () => { if(au.duration) au.currentTime = rng.value/1000*au.duration; };
+    list.appendChild(row);
+  });
+  if(trackId){ const r = document.getElementById(trackId); if(r){ r.classList.add("hl"); setTimeout(()=>r.scrollIntoView({block:"center",behavior:"smooth"}),50); } }
+  else window.scrollTo(0,0);
+}
+au.onplay = () => cur && (cur.btn.innerHTML = icon(PAUSE), cur.btn.setAttribute("aria-label","Pause"));
+au.onpause = () => cur && (cur.btn.innerHTML = icon(PLAY), cur.btn.setAttribute("aria-label","Play"));
+au.ontimeupdate = () => { if(cur && au.duration){ cur.rng.value = au.currentTime/au.duration*1000; cur.tm.textContent = fmt(au.currentTime)+" / "+fmt(au.duration); } };
+au.onended = () => { if(cur){ cur.rng.value = 0; cur.btn.innerHTML = icon(PLAY); } };
+
+function route(){
+  const parts = location.hash.replace("#","").split("/"), k = parts[0];
+  if(LEVELS[k]){
+    // #C  -> Sounds (default)   #C/songs -> Songs   #C/C-01-s -> Sounds + highlight   #C/songs/ID -> Songs + highlight
+    const tab = parts[1] === "songs" ? "songs" : "sounds";
+    const id = parts[1] === "songs" || parts[1] === "sounds" ? parts[2] : parts[1];
+    showLevel(k, tab, id);
+  } else { stop(); $("level").hidden = true; $("home").hidden = false; document.title = "Crystal English – Audio";
+    if(k === "levels") $("levels").scrollIntoView(); else window.scrollTo(0,0); }
+}
+window.addEventListener("hashchange", route); route();
+</script>
+</body>
+</html>
